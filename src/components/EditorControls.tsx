@@ -61,7 +61,7 @@ export default function EditorControls({
       setRecentlySaved(true);
       if (pasteId) {
         history.replace({
-          pathname: pasteId,
+          search: `?id=${pasteId}`,
         });
         copy(window.location.href);
         document.title = 'GraveMC Paste | ' + pasteId;
