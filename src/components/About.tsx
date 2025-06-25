@@ -40,71 +40,19 @@ export default function About({
     <AboutPanel>
       <CloseButton setVisible={setVisible} />
       <BannerContainer>
-        <Banner>{'{paste}'}</Banner>
+        <Banner>GraveMC Paste</Banner>
       </BannerContainer>
       <p>
-        <b>paste is a simple web app for writing & sharing code</b>. It's a
-        different take on conventional pastebin sites like pastebin.com or
-        hastebin.
+        <b>paste.gravemc.net is the official tool for uploading, sharing, and diagnosing logs, configs, and errors across the GraveMC network.</b>
       </p>
-      {window.location.hostname === 'pastes.dev' && (
-        <>
-          <p>
-            <b>pastes.dev</b> is the official, publicly accessible paste
-            instance, and can be used by anyone, subject to the{' '}
-            <a
-              href="#"
-              onClick={e => {
-                setShowTos(true);
-                e.preventDefault();
-              }}
-            >
-              Terms of Service
-            </a>
-            .
-          </p>
-          <p>
-            To access pastes.dev programmatically, please use the{' '}
-            <a href="https://github.com/lucko/paste#readme" target="_blank">
-              API
-            </a>
-            . :)
-          </p>
-          <p>
-            Please{' '}
-            <b>
-              <a
-                href="#"
-                onClick={e => {
-                  setShowTos(true);
-                  e.preventDefault();
-                }}
-              >
-                report
-              </a>
-            </b>{' '}
-            illegal, malicious, or abusive content so it can be removed.
-          </p>
-        </>
-      )}
+      <p>
+        Built for the GraveMC community, it's the easiest way to share your logs with staff or friends for troubleshooting.
+      </p>
+      <p>
+        Part of the GraveMC project — online since 2023 and powered by our players.
+      </p>
       <p style={{ textAlign: 'center' }}>
-        <a href="https://github.com/lucko/paste" target="_blank">
-          paste
-        </a>{' '}
-        is free & open source on GitHub.
-        <br />
-        Copyright &copy; 2021-{new Date().getFullYear()}{' '}
-        <a href="https://github.com/lucko" target="_blank">
-          lucko
-        </a>{' '}
-        & other paste{' '}
-        <a
-          href="https://github.com/lucko/paste/graphs/contributors"
-          target="_blank"
-        >
-          contributors
-        </a>
-        .
+        &copy; 2023-2025 GraveMC. Not affiliated with Mojang.
       </p>
     </AboutPanel>
   );
@@ -116,12 +64,12 @@ const Tos = ({ setVisible }: { setVisible: (show: boolean) => void }) => {
       <CloseButton setVisible={setVisible} />
       <h1>Terms of Service</h1>
       <p>
-        Welcome to pastes.dev. By using this service, you agree to the following
+        Welcome to paste.gravemc.net. By using this service, you agree to the following
         terms:
       </p>
       <ol>
         <li>
-          <b>No Illegal Use:</b> You may not use pastes.dev to share, store, or
+          <b>No Illegal Use:</b> You may not use paste.gravemc.net to share, store, or
           distribute any content that is illegal, harmful, or violates any laws
           or regulations.
         </li>
@@ -147,14 +95,13 @@ const Tos = ({ setVisible }: { setVisible: (show: boolean) => void }) => {
         </li>
       </ol>
       <p>
-        By using pastes.dev, you accept these terms. If you do not agree, please
+        By using paste.gravemc.net, you accept these terms. If you do not agree, please
         do not use the service.
       </p>
       <p>
         <b>Reporting Abuse</b>
         <br />
-        If you encounter illegal or malicious content, please report it by email
-        to report-abuse {'<at>'} pastes.dev.
+        If you encounter illegal or malicious content, please report it to the GraveMC staff.
       </p>
     </AboutPanel>
   );

@@ -35,9 +35,53 @@ export interface Themes {
   'frappe': Theme;
   'macchiato': Theme;
   'mocha': Theme;
+  'gravemc': Theme;
 }
 
 const themes: Themes = {
+  'gravemc': {
+    id: 'gravemc',
+    primary: '#ffffff', // White text
+    secondary: '#FFA372', // Orange
+    highlight: '#0F4C81', // Medium blue
+    background: '#1B262C', // Dark blue
+    logo: '#FFA372', // Orange
+    lightOrDark: 'dark',
+
+    highlightedLine: {
+      color: '#ffffff', // White text for highlighted line
+      backgroundColor: '#FFA372', // Slightly lighter blue for contrast
+    },
+
+    editor: makeMonacoTheme(
+      {
+        base: 'vs-dark',
+        colors: {
+          primary: '#ffffff', // White text
+          background: '#1B262C', // Dark blue
+          comment: '#546e7a', // Dark gray-blue
+          delimiter: '#0d47a1', // Dark blue
+          annotation: '#D97D4A', // Darker orange for annotations (darker variant of #FFA372)
+          constant: '#D97D4A', // Darker orange for constants (darker variant of #FFA372)
+          number: '#D97D4A', // Darker orange for numbers (darker variant of #FFA372)
+          string: '#2196f3', // Blue
+          operator: '#1976d2', // Medium blue
+          keyword: '#D97D4A', // Darker orange for keywords (darker variant of #FFA372)
+          type: '#D97D4A', // Darker orange for types (darker variant of #FFA372)
+          variable: '#1976d2', // Medium blue
+          logInfo: '#2e7d32', // Green
+          logError: '#c62828', // Red
+          logWarning: '#D97D4A', // Darker orange for warnings (darker variant of #FFA372)
+          logDate: '#0d47a1', // Dark blue
+          logException: '#D97D4A', // Darker orange for exceptions (darker variant of #FFA372)
+          diffMeta: '#0d47a1', // Dark blue
+          diffAddition: '#2e7d32', // Green
+          diffDeletion: '#c62828', // Red
+        },
+      },
+      {}
+    ),
+  },
   'dark': {
     id: 'dark',
     primary: '#c9d1d9', // fg.default

@@ -20,7 +20,7 @@ export default function App() {
   const [contentType, setContentType] = useState<string>();
   const [theme, setTheme] = usePreference<keyof Themes>(
     'theme',
-    'dark',
+    'gravemc',
     pref => !!themes[pref]
   );
   const [showAbout, setShowAbout] = useState<boolean>(false);

@@ -2,6 +2,7 @@ import copy from 'copy-to-clipboard';
 import history from 'history/browser';
 import { RefObject, useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import logoImage from '/assets/logo256.png';
 
 import themes, { Themes } from '../style/themes';
 import { languages } from '../util/highlighting';
@@ -63,7 +64,7 @@ export default function EditorControls({
           pathname: pasteId,
         });
         copy(window.location.href);
-        document.title = 'paste | ' + pasteId;
+        document.title = 'GraveMC Paste | ' + pasteId;
       }
     });
   }, [actualContent, language, recentlySaved]);
@@ -98,7 +99,7 @@ export default function EditorControls({
       pathname: '/',
       hash: '',
     });
-    document.title = 'paste';
+    document.title = 'GraveMC Paste';
   }
 
   function unsetReadOnly() {
@@ -108,6 +109,9 @@ export default function EditorControls({
   return (
     <Header>
       <Section>
+        <Logo onClick={reset}>
+          <img src={logoImage} alt="GraveMC Logo" title="Click to create new paste" />
+        </Logo>
         <Button onClick={reset}>[new]</Button>
         <Button onClick={save}>
           {recentlySaved ? '[link copied!]' : saving ? '[saving...]' : '[save]'}
@@ -160,6 +164,31 @@ const Section = styled.div`
   @media (max-width: 850px) {
     .optional {
       display: none;
+    }
+  }
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  padding: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${props => props.theme.highlight};
+  }
+
+  img {
+    height: 28px;
+    width: auto;
+    filter: drop-shadow(0 0 3px ${props => props.theme.logo});
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 `;
